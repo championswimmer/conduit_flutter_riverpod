@@ -6,4 +6,14 @@ void main() {
   test('rest client can be constructed', () {
     final client = ConduitRESTClient(Dio());
   });
+
+  group('prod endpoint tests', () {
+    final client = ConduitRESTClient(Dio());
+
+    test('can get articles', () async {
+      final articles = await client.getArticles();
+      expect(articles.articlesCount, isNot(null));
+    });
+
+  });
 }

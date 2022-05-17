@@ -8,5 +8,5 @@ abstract class ConduitRESTClient {
   factory ConduitRESTClient(Dio dio, {String baseUrl}) = _ConduitRESTClient;
 
   @GET("/articles")
-  Future<GetArticleResponse> getArticles();
+  Future<GetArticlesResponse> getArticles();
 }

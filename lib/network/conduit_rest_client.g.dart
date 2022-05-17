@@ -18,18 +18,18 @@ class _ConduitRESTClient implements ConduitRESTClient {
   String? baseUrl;
 
   @override
-  Future<GetArticleResponse> getArticles() async {
+  Future<GetArticlesResponse> getArticles() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetArticleResponse>(
+        _setStreamType<GetArticlesResponse>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/articles',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = GetArticleResponse.fromJson(_result.data!);
+    final value = GetArticlesResponse.fromJson(_result.data!);
     return value;
   }
 

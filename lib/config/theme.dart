@@ -12,7 +12,7 @@ class AppTheme {
     titleSmall: _fontHeading,
     headlineLarge: _fontHeading,
     headlineMedium: _fontHeading,
-    headlineSmall: _fontHeading
+    headlineSmall: _fontHeading,
   );
 
   static const primarySwatch = Colors.green;
