@@ -17,4 +17,9 @@ class AppTheme {
 
   static const primarySwatch = Colors.green;
 
+  static ButtonThemeData buttonTheme(ThemeData theme) =>
+      theme.buttonTheme.copyWith(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)));
+
+  static ElevatedButtonThemeData elevatedButtonTheme(ThemeData theme) => ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))));
 }

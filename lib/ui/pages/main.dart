@@ -12,11 +12,7 @@ class MainPage extends StatelessWidget {
         title: const Text("Conduit"),
       ),
       body: AutoTabsScaffold(
-        routes: const [
-          GlobalFeedRoute(),
-          MyFeedRoute(),
-          ViewProfileRoute()
-        ],
+        routes: const [GlobalFeedRoute(), MyFeedRoute(), ViewProfileRoute()],
         bottomNavigationBuilder: (context, tabsRouter) =>
             BottomNavigationBar(
                 currentIndex: tabsRouter.activeIndex,

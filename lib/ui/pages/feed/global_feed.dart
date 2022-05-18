@@ -1,3 +1,4 @@
+import 'package:conduit_flutter_riverpod/ui/widgets/fragments/article_list_fragment.dart';
 import 'package:flutter/material.dart';
 
 class GlobalFeedPage extends StatelessWidget {
@@ -5,8 +6,6 @@ class GlobalFeedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Global Feed Page"),
-    );
+    return const ArticleListFragment();
   }
 }

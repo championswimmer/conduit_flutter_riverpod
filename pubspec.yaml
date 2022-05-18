@@ -29,6 +29,7 @@ dependencies:
   retrofit: ^3.0.1
   logger: ^1.1.0
   auto_route: ^4.0.1
+  flutter_riverpod: ^2.0.0-dev.7
 
 dev_dependencies:
   flutter_test:
