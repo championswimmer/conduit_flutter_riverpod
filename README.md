@@ -2,6 +2,8 @@
 
 A Flutter client for https://realworld.io project 
 
+<https://championswimmer.in/conduit_flutter_riverpod>
+
 
 ## Development
 
