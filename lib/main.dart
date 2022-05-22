@@ -1,4 +1,5 @@
 import 'package:conduit_flutter_riverpod/config/theme.dart';
+import 'package:conduit_flutter_riverpod/data/auth_state_notifier.dart';
 import 'package:conduit_flutter_riverpod/router/app_router.dart';
 import 'package:conduit_flutter_riverpod/router/auth_guard.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +9,12 @@ void main() {
   runApp(ProviderScope(child: MyApp()));
 }
 
+// TODO: DI via get_it
+final authTokenNotifier = AuthTokenNotifier();
+
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  final _appRouter = AppRouter(authGuard: AuthGuard());
+  final _appRouter = AppRouter(authGuard: AuthGuard(authTokenNotifier));
 
   // This widget is the root of your application.
   @override

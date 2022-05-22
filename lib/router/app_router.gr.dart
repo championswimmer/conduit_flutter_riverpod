@@ -25,6 +25,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const MainPage());
     },
+    LoginRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const LoginPage());
+    },
     GlobalFeedRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const GlobalFeedPage());
@@ -41,14 +45,14 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
-        RouteConfig(MainRoute.name, path: '/', guards: [
-          authGuard
-        ], children: [
+        RouteConfig(MainRoute.name, path: '/', children: [
           RouteConfig(GlobalFeedRoute.name, path: '', parent: MainRoute.name),
-          RouteConfig(MyFeedRoute.name, path: 'feed', parent: MainRoute.name),
+          RouteConfig(MyFeedRoute.name,
+              path: 'feed', parent: MainRoute.name, guards: [authGuard]),
           RouteConfig(ViewProfileRoute.name,
-              path: 'profile', parent: MainRoute.name)
-        ])
+              path: 'profile', parent: MainRoute.name, guards: [authGuard])
+        ]),
+        RouteConfig(LoginRoute.name, path: '/login')
       ];
 }
 
@@ -59,6 +63,14 @@ class MainRoute extends PageRouteInfo<void> {
       : super(MainRoute.name, path: '/', initialChildren: children);
 
   static const String name = 'MainRoute';
+}
+
+/// generated route for
+/// [LoginPage]
+class LoginRoute extends PageRouteInfo<void> {
+  const LoginRoute() : super(LoginRoute.name, path: '/login');
+
+  static const String name = 'LoginRoute';
 }
 
 /// generated route for

@@ -2,6 +2,7 @@ import 'package:conduit_flutter_riverpod/network/dtos/get_articles_response.dart
 import 'package:dio/dio.dart';
 import 'package:retrofit/dio.dart';
 import 'package:retrofit/http.dart';
+
 part 'conduit_rest_client.g.dart';
 
 @RestApi(baseUrl: "https://api.realworld.io/api")
@@ -11,4 +12,6 @@ abstract class ConduitRESTClient {
   @GET("/articles")
   Future<GetArticlesResponse> getArticles([@CancelRequest() CancelToken? cancelToken]);
 
+  @GET("/articles/{slug}")
+  Future<GetArticleResponse> getArticle(@Path("slug") String slug, [@CancelRequest() CancelToken? cancelToken]);
 }
